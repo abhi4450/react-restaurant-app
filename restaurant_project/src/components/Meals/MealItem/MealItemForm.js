@@ -1,11 +1,22 @@
-import classes from "./MealItemForm.module.css"
-
+import classes from "./MealItemForm.module.css";
+import Input from "../../UI/Input";
 const MealItemForm = () => {
-    return <form>
-        <label htmlFor="amount" >Amount</label>
-        <input className={classes.input} type="number" id="amount" />
-        <button className={classes.button}>+ Add</button>
+  return (
+    <form>
+      <Input
+        label="Amount"
+        input={{
+          id: "amount",
+          type: "number",
+          min: "1",
+          max: "5",
+          step: "1",
+          defaultValue: "1",
+        }}
+      />
+      <button className={classes.button}>+ Add</button>
     </form>
+  );
 };
 
 export default MealItemForm;
